@@ -1,8 +1,10 @@
 <?php
-
 namespace Jonas\TestPackage;
 
 class TestPackage
 {
-    // Build wonderful things
+    public function greet(string $name = 'World'): string
+    {
+        return "Hello, {$name}!";
+    }
 }

@@ -45,9 +45,13 @@ class TestPackageServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/test-package.php', 'test-package');
 
         // Register the service the package provides.
-        $this->app->singleton('test-package', function ($app) {
-            return new TestPackage;
+        // $this->app->singleton('test-package', function ($app) {
+        //     return new TestPackage;
+        // });
+        $this->app->singleton('test-package', concrete: function ($app) {
+            return new ActivityLogger(config('test-package'));
         });
+
     }
 
     /**
