@@ -1,0 +1,41 @@
+{
+    "name": "jonas/test-package",
+    "description": "A test package for Laravel 10.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonas Levis",
+            "email": "jonasinfo2016@gmail.com",
+            "homepage": "https://github.com/s80programmeomega"
+        }
+    ],
+    "homepage": "https://github.com/jonas/test-package",
+    "keywords": ["Laravel", "TestPackage"],
+    "require": {
+        "illuminate/support": "~10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~10.0",
+        "orchestra/testbench": "~8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jonas\\TestPackage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jonas\\TestPackage\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jonas\\TestPackage\\TestPackageServiceProvider"
+            ],
+            "aliases": {
+                "TestPackage": "Jonas\\TestPackage\\Facades\\TestPackage"
+            }
+        }
+    }
+}
